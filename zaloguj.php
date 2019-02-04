@@ -22,30 +22,37 @@
 		$haslo = $_POST['haslo'];
 		
 		$login = htmlentities($login, ENT_QUOTES, "UTF-8");
-		$haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
 		
-		if($rezultat=@$polaczenie->query(sprintf("SELECT * FROM czytelnicy WHERE user='%s' AND pass='%s'",
-		mysqli_real_escape_string($polaczenie,$login),
-		mysqli_real_escape_string($polaczenie,$haslo))))
+		
+		if($rezultat=@$polaczenie->query(sprintf("SELECT * FROM czytelnicy WHERE user='%s' ",
+		mysqli_real_escape_string($polaczenie,$login))))
 		{
 			$ilu_userow=$rezultat->num_rows;
 			if($ilu_userow>0)
 			{
-				$_SESSION['zalogowany']=true;
-			
 				$wiersz= $rezultat->fetch_assoc();
-				$_SESSION['id']=$wiersz['id'];
-				$_SESSION['user']=$wiersz['user'];
-				$_SESSION['imie']=$wiersz['imie'];
-				$_SESSION['nazwisko']=$wiersz['nazwisko'];
-				$_SESSION['rezerwacje']=$wiersz['rezerwacje'];
 				
-				unset($_SESSION['blad']);
-				$rezultat->free_result();
-				header('Location: wypozycz.php');
+					if(password_verify($haslo, $wiersz['pass']))
+				{
+					$_SESSION['zalogowany']=true;					
+					$_SESSION['id']=$wiersz['id'];
+					$_SESSION['user']=$wiersz['user'];
+					$_SESSION['imie']=$wiersz['imie'];
+					$_SESSION['nazwisko']=$wiersz['nazwisko'];
+					$_SESSION['rezerwacje']=$wiersz['rezerwacje'];
+					
+					unset($_SESSION['blad']);
+					$rezultat->free_result();
+					header('Location: wypozycz.php');
+				}
+				else
+				{
+					$_SESSION['blad']= '<span style="color:red">Niepoprawny login lub hasło</span>';
+					header('Location: index.php');
+				}
 			}
-			else{
-				
+			else
+			{				
 				$_SESSION['blad']= '<span style="color:red">Niepoprawny login lub hasło</span>';
 				header('Location: index.php');
 			}

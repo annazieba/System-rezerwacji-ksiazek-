@@ -2,10 +2,14 @@
 
 	session_start();
 	
-	if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
+	if((isset($_SESSION['udanarejestracja'])))
 	{
-		header('Location: wypozycz.php');
+		header('Location: index.php');
 		exit();
+	}
+	else
+	{
+		unset($_SESSION['udanarejestracja']);
 	}
 ?>
 
@@ -16,16 +20,17 @@
 	<meta charset ="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>System rezerwacji książek w bibliotece</title>
-	
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	
 </head>
 
 <body>
 
+Dziękujemy za rejestrację, możesz zalogować się na swoje konto<br/><br/>
 	
 	<h1>Czytaj^n</h1><br/><br/>
 
-	Nie masz jeszcze konta? <a href="rejestracja.php">Zarejestruj się</a>
+	<a href="index.php">Zaloguj się na swoje konto</a>
 	<br></br>
 	
 	<form action="zaloguj.php" method="post">
