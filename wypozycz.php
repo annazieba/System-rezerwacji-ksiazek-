@@ -24,9 +24,16 @@
 	echo "<p>Witaj ".$_SESSION['user'].'![<a href="wyloguj.php">Wyloguj się</a>]</p>';
 	echo "<p><b>Imię</b>: ".$_SESSION['imie'];
 	echo "<p><b>Nazwisko</b>: ".$_SESSION['nazwisko'];
-	echo "<p><b>Twoje rezerwacje</b>: ".$_SESSION['rezerwacje']."</p>";
+	//echo "<p><b>Twoje rezerwacje</b>: ".$_SESSION['rezerwacje']."</p>";
 
 ?>
+<br/><br/>
+
+<a href="lista.php">Zobacz listę książek i zarezerwuj!</a>
+<br/><br/>
+Jeżeli masz książki po które już nie sięgniesz, możesz podzielić się z innymi użytkownikami!
+<br/>
+<a href="dodaj-nowa.php">Dodaj książkę</a>
 
 </body>
 </html>
