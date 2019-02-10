@@ -6,14 +6,14 @@
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 	
 	
-	echo "<h1>Wybierz książkę!</h1>";
+	echo "<h1><font size='7', color='white'><center>Wybierz książkę!</center></font></h1>";
 	
-	echo '<table style="margin: 20px; cellspacing=10">
+	echo '<table style="margin: 20px; cellspacing=10; margin-left: 380px">
 			<tr>
-			<th>Numer pozycji</th>
-			<th>Tytuł książki</th>
-			<th>Autor</th>
-			<th>Gatunek</th></tr>';
+			<th bgcolor= "#660033"><font size="4" color="white"><center>Numer pozycji</center></font></th>
+			<th bgcolor= "#333333"><font size="4" color="white"><center>Tytuł książki</center></font></th>
+			<th bgcolor= "#336633"><font size="4" color="white"><center>Autor</center></font></th>
+			<th bgcolor= "#339933"><font size="4" color="white"><center>Gatunek</center></font></th></tr>';
 			
 
 			
@@ -33,6 +33,8 @@
 
 
 
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -43,7 +45,7 @@
 	
 </head>
 
-<body>
+<body bgcolor="black">
 
 
 
@@ -53,10 +55,10 @@
 		while($row = $rezultat->fetch_assoc())
 		{
 			
-			echo "<tr cellpadding='10'><td>{$row['id']}</td>
-			<td margin='20'>{$row['tytul']}</td>
-			<td>{$row['autor']}</td>
-			<td>{$row['gatunek']}</td></tr>";
+			echo "<tr cellpadding='10'><td width='200', height='30'><font  size='4'color='white'><center>{$row['id']}</center></font></td>
+			<td width='200', height='30'><font size='4' color='white'><center>{$row['tytul']}</center></font></td>
+			<td width='200', height='30'><font size='4' color='white'><center>{$row['autor']}</center></font></td>
+			<td width='200', height='30'><font size='4' color='white'><center>{$row['gatunek']}</center></font></td></tr>";
 						
 		}
 		
@@ -76,19 +78,16 @@
 
 
 <br/>
-<?php
+   
 
- 
-
-?>
-<form action= "dodaj_ksiazke.php" method="post">
+<center><form action= "dodaj_ksiazke.php" method="post">
 
 
 <select name="id">
 	<option>1 - Pan Tadeusz</option>
 	<option>2 - Dziady</option>
 	<option>3 - Quo vadis</option>
-	<option>4 - Cłopi</option>
+	<option>4 - Chłopi</option>
 	<option>5 - Lalka</option>
 	<option>6 - Potop</option>
 	<option>7 - Zbrodnia i kara</option>
@@ -106,9 +105,13 @@
 	<option>20 - Sny wojenne</option>
 	<option>21 - To co zostawila</option>
 	<option>22 - W cieniu prawa</option>
-</select>
-<input type="submit" value="Zamów" />
+</select></center>
+<center><input type="submit" value="Zamów" /></center>
 </form>
+<br/>
+
+
+
 
 	
 </body>

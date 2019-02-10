@@ -117,11 +117,12 @@
 	
 </head>
 
-<body>
-
+<body bgcolor="black">
+<center><table>
+<br/><br/><br/><br/>
 	<form method="post">
-	
-	Autor: <br/><input type="text" name="autor"/><br/>
+	<br/><br/>
+	<tr><td width="350", bgcolor="#FF0000"><font size="5" color= "white"></br>Autor:</font><br/><center><input type="text" name="autor"/></center><br/>
 	<?php
 		if(isset($_SESSION['e_autor']))
 		{
@@ -130,8 +131,10 @@
 		}	
 		
 	?>
-	<br/>
-	Gatunek: <br/><input type="text" name="gatunek"/><br/>
+	<br/><br/>
+	</tr></td>
+	
+	<tr><td width="350", bgcolor="#FF3300"><font size="5" color= "white"></br>Gatunek:</font><br/><center><input type="text" name="gatunek"/></center><br/>
 	<?php
 		if(isset($_SESSION['e_gatunek']))
 		{
@@ -140,10 +143,12 @@
 		}	
 		
 	?>
-	<br/>
+	<br/><br/>
+	</tr></td>
 	
 	
-	Tytuł: <br/><input type="text" name="tytul"/><br/>
+	
+	<tr><td width="350", bgcolor="#FF6600"><font size="5" color= "white"></br>Tytuł: </font><br/><center><input type="text" name="tytul"/></center><br/>
 	
 	<?php
 		if(isset($_SESSION['e_tytul']))
@@ -153,13 +158,15 @@
 		}	
 		
 	?>
-	
+	<br/><br/>
+	</tr></td>
 	
 	
 	<br/>
+	<tr><td>
 	<input type="submit" value="Dodaj" />
-	
+	</td></tr>
 	</form>
-	
+	</table></center>
 </body>
 </html>

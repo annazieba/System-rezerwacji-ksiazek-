@@ -16,27 +16,48 @@
 	<meta charset ="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>System rezerwacji książek w bibliotece</title>
-	
+	<link rel="stylesheet" href="style.css" type="text/css" />
 	
 </head>
 
-<body>
+<body bgcolor="black">
+<div id="container">
+<br/><br/><br/>
+<center><table>
+
+<tr><td width="400", height="250", bgcolor="black">
+	
+		<h1><font size="10" color="white"><center>Czytaj^n</center></font></h1><br/><br/>
+</td>
+	
+    <td width="400", height="250", bgcolor="purple"><font size="10" color="white"><center>Zaloguj się</center></font></td></tr>
+
+	<tr><td width="400", height="250", bgcolor="green">
+	
+
+    <font size="10" color="white"><center>Nie masz konta? </center></font>
+	<br/>
+
+	<a href="rejestracja.php"><font size="10" color="white"><center>Zarejestruj się</center></font></a>
+	</td>
+	
+	
+	<td width="400", height="250", bgcolor="blue">
+		<center><form action="zaloguj.php" method="post">
+	
+		<font size="6" color="white">Login: <br/><input type="text" name="login" /></font><br/>
+		<font size="6" color="white">Hasło: <br/><input type="password" name="haslo" /></font><br/>
+		<center><input type="submit" value="Zaloguj się" /></center>
+		
+		</form></center></td>
+		
 
 	
-	<h1>Czytaj^n</h1><br/><br/>
+<br/>
+</tr>
+</table></center>
+</div>
 
-	Nie masz jeszcze konta? <a href="rejestracja.php">Zarejestruj się</a>
-	<br></br>
-	
-	<form action="zaloguj.php" method="post">
-	
-	Login: <br/><input type="text" name="login" /><br/>
-	Hasło: <br/><input type="password" name="haslo" /><br/><br/>
-	<input type="submit" value="Zaloguj się"/>
-	
-	
-	</form>
-	
 <?php
 
 	if(isset($_SESSION['blad'])) echo $_SESSION['blad'];

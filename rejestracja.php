@@ -158,11 +158,14 @@
 	
 </head>
 
-<body>
-
+<body bgcolor="black">
+<center><font color="white" size="6"><h1>Wypełnij formularz</h1></font></center>
+<center><table>
+<br/>
 	<form method="post">
 	
-	Nickname: <br/><input type="text" name="nick"/><br/>
+	
+	<tr><td width="350", bgcolor="#3300CC"><font size="5" color= "white"><center>Nickname: </center></font><br/><center><input type="text" name="nick"/></center><br/>
 	<?php
 		if(isset($_SESSION['e_nick']))
 		{
@@ -171,8 +174,9 @@
 		}	
 		
 	?>
-	<br/>
-	Imię: <br/><input type="text" name="imie"/><br/>
+	<br/><br/>
+	</tr></td>
+	<tr><td width="350", bgcolor="#3333CC"><font size="5" color= "white"><center>Imię:</center></font><br/><center><input type="text" name="imie"/></center><br/>
 	<?php
 		if(isset($_SESSION['e_imie']))
 		{
@@ -181,8 +185,10 @@
 		}	
 		
 	?>
+	<br/><br/>
+	</tr></td>
 	<br/>
-	Nazwisko: <br/><input type="text" name="nazwisko"/><br/>
+	<tr><td width="350", bgcolor="#3366CC"><font size="5" color= "white"><center>Nazwisko:</center></font><br/><center><input type="text" name="nazwisko"/></center><br/>
 	<?php
 		if(isset($_SESSION['e_nazwisko']))
 		{
@@ -191,8 +197,10 @@
 		}	
 		
 	?>
+	<br/><br/>
+	</tr></td>
 	<br/>
-	E-mail: <br/><input type="text" name="email"/><br/>
+	<tr><td width="350", bgcolor="#3399CC"><font size="5" color= "black"><center>E-mail:</center></font> <br/><center><input type="text" name="email"/></center><br/>
 	
 	<?php
 		if(isset($_SESSION['e_email']))
@@ -202,9 +210,11 @@
 		}	
 		
 	?>
+	<br/>
+	</tr></td>
 	
-	Hasło: <br/><input type="password" name="haslo1"/><br/>
-	Powtórz hasło: <br/><input type="password" name="haslo2"/><br/>
+	<tr><td width="350", bgcolor="#33CCCC"><font size="5" color= "black"><center>Hasło:</center></font> <br/><center><input type="password" name="haslo1"/></center><br/>
+	<font size="5" color= "black"><center>Powtórz hasło: </center></font><br/><center><input type="password" name="haslo2"/></center><br/>
 	
 	<?php
 		if(isset($_SESSION['e_haslo']))
@@ -214,10 +224,12 @@
 		}	
 		
 	?>
+	<br/>
+	</tr></td>
 	
-	<label><br/>
-	<input type="checkbox" name="regulamin"/>Akceptuję regulamin
-	</label>
+	<tr><td><center><label><br/>
+	<input type="checkbox" name="regulamin"/><font size="4" color="white"/>Akceptuję regulamin</font>
+	</label></center></tr></td>
 	
 	<?php
 		if(isset($_SESSION['e_regulamin']))
@@ -227,11 +239,14 @@
 		}	
 		
 	?>
-	
 	<br/>
-	<input type="submit" value="Zarejestruj się" />
+	</tr></td>
+	
+	
+	<tr><td><center><input type="submit" value="Zarejestruj się" /></center></tr></td>
 	
 	</form>
+	</table></center>
 	
 </body>
 </html>
