@@ -1,4 +1,10 @@
 <?php
+/** 
+ * 
+ * Jeżeli zmienna nie jest ustawiona, to następuje przekierowanie na stronę z panelem logowania.
+ * 
+ *
+ */
 	
 	session_start();
 	if(!isset($_SESSION['zalogowany']))

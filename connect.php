@@ -1,8 +1,12 @@
 <?php
 
-/**
-*parametry bazy danych, niezbędne do każdego nawiązania połączenia z bazą
-*/
+/** @Parametry bazy danych.
+ *
+ * Plik z parametrami jest niezbędny do połączenia z bazą danych.
+ *
+ */
+
+ 
 	
 	$host= "localhost"; 
 	$db_user= "root";

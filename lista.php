@@ -1,4 +1,11 @@
 <?php
+
+/**
+ *
+ * Nawiązanie połączenia z bazą danych.
+ *
+ */
+
 	session_start();
 	require_once "connect.php";
 	
@@ -8,6 +15,11 @@
 	
 	echo "<h1><font size='7', color='white'><center>Wybierz książkę!</center></font></h1>";
 	
+/**
+ *
+ * Utworzenie tytułów dla tabeli z bazy danych "ksiazki".
+ *
+ */	
 	echo '<table style="margin: 20px; cellspacing=10; margin-left: 380px">
 			<tr>
 			<th bgcolor= "#660033"><font size="4" color="white"><center>Numer pozycji</center></font></th>
@@ -18,13 +30,11 @@
 
 			
 			
-	//zapytanie o listę książek
+	///Zapytanie o listę książek.
 	$wynik = "SELECT * FROM ksiazki";
 	$rezultat = $polaczenie->query($wynik);
 	
-	//wyswietlanie wyniku, sprawdzenie zwrócenia wartości >0
-		
-	
+	///Zamknięcie połączenia z bazą	
 	$polaczenie->close();
 	
 	
@@ -50,6 +60,12 @@
 
 
   <?php 
+ /** @brief Wyświetlenie listy książek.
+  *
+  * Funkcja odpowiada za wydobycie po kolei wszystkich wierszy z bazy danych z tabeli o nazwie "ksiazki".
+  * Są to informacje o numerze pozycji książki, tytule, autorze i gatunku.
+  *
+  */
 		if($rezultat-> num_rows >0)
 	{ 
 		while($row = $rezultat->fetch_assoc())
@@ -65,7 +81,14 @@
 	}	
 	
 	?>
+
 	<?php
+	
+/**
+ *
+ * Jeżeli wystąpoł błąd w wyborze książki, pojawia się komunikat o błędzie.
+ *
+ */
 	
 	
 		if(isset($_SESSION['e_wybor']))

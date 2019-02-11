@@ -1,7 +1,26 @@
 <?php
+/** @brief Strona główna z panelem logowania.
+ * 
+ * Znajduje się tu także odnośnik do panelu rejestracji dla tych co nie mają jeszcze konta.
+ *
+ */
+?>
 
+<?php
+/** 
+ * 
+ * 'session_start' umożliwia korzystanie ze zmiennych sesyjnych.
+ *
+ */
 	session_start();
-	
+
+/** 
+ * 
+ * Jeżeli istnieje zmienna 'zalogowany' i jednocześnie ma ona wartość 'true',
+ * użytkownik ma zostać przekierowany na swoje konto.
+ * Aby było to automatyczne to zostaje dodana funkcja 'exit'.
+ *
+ */
 	if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
 	{
 		header('Location: wypozycz.php');
@@ -59,6 +78,12 @@
 </div>
 
 <?php
+
+/** 
+ * 
+ * Jeżeli w sesji pojawiła się zmienna "bbąd" to zostanie pokazana na ekranie.
+ *
+ */
 
 	if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
 

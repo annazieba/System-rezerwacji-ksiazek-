@@ -1,4 +1,11 @@
 <?php
+/** @brief Udana rejestracja.
+ *
+ * W przypadku udanej rejestracji użytkownik zostaje przekierowany na stronę powitalną.
+ * Jest możliwość pierwszego logowania.
+ * W przeciwnym wypadku sesja zostaje zniszczona.
+ *
+ */
 
 	session_start();
 	
@@ -43,7 +50,7 @@
 	</form></table></center>
 	
 <?php
-
+/// Jeżeli wystąpił błąd w wyniku logowania, zostaje wyświetlony komunikato błędzie.
 	if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
 
 ?>
